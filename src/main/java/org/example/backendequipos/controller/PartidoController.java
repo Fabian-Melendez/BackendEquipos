@@ -3,7 +3,7 @@ package org.example.backendequipos.controller;
 import org.example.backendequipos.model.Partido;
 import org.example.backendequipos.service.PartidoService;
 import org.springframework.web.bind.annotation.*;
-
+import org.example.backendequipos.dto.ResultadoPartidoDTO;
 import java.util.List;
 
 @RestController
@@ -43,7 +43,7 @@ public class PartidoController {
     }
 
     @GetMapping("/resultados")
-    public List<Object[]> resultados() {
+    public List<ResultadoPartidoDTO> resultados() {
         return service.resultados();
     }
 }

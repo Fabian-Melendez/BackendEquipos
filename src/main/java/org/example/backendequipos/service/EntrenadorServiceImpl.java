@@ -1,5 +1,6 @@
 package org.example.backendequipos.service;
 
+import org.example.backendequipos.exception.RecursoNoEncontradoException;
 import org.example.backendequipos.model.Entrenador;
 import org.example.backendequipos.repository.EntrenadorRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class EntrenadorServiceImpl implements EntrenadorService {
     @Override
     public Entrenador obtenerPorId(Long id) {
         return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Entrenador no encontrado con id " + id));
+                .orElseThrow(() -> new RecursoNoEncontradoException("No encontrado..."));
     }
 
     @Override

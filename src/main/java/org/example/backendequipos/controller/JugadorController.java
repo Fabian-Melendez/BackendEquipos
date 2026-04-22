@@ -21,6 +21,10 @@ public class JugadorController {
     public List<Jugador> listar() {
         return service.listar();
     }
+    @GetMapping("/{id}")
+    public Jugador obtenerPorId(@PathVariable Long id) {
+        return service.obtenerPorId(id);
+    }
 
     @PostMapping
     public Jugador guardar(@RequestBody Jugador j) {

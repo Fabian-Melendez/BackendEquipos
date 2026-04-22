@@ -1,5 +1,6 @@
 package org.example.backendequipos.service;
 
+import org.example.backendequipos.exception.RecursoNoEncontradoException;
 import org.example.backendequipos.model.Jugador;
 import org.example.backendequipos.repository.JugadorRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class JugadorServiceImpl implements JugadorService {
     @Override
     public Jugador obtenerPorId(Long id) {
         return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Jugador no encontrado con id " + id));
+                .orElseThrow(() -> new RecursoNoEncontradoException("No encontrado..."));
     }
 
     @Override

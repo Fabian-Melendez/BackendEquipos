@@ -1,9 +1,11 @@
 package org.example.backendequipos.service;
-
+import org.example.backendequipos.dto.ResultadoPartidoDTO;
 import org.example.backendequipos.model.Partido;
 import java.util.List;
 
 public interface PartidoService {
+
+    List<ResultadoPartidoDTO> resultados();
 
     List<Partido> listar();
 
@@ -15,5 +17,4 @@ public interface PartidoService {
 
     void eliminar(Long id);
 
-    List<Object[]> resultados();
 }

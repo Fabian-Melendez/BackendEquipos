@@ -1,5 +1,6 @@
 package org.example.backendequipos.service;
 
+import org.example.backendequipos.exception.RecursoNoEncontradoException;
 import org.example.backendequipos.model.Equipo;
 import org.example.backendequipos.repository.EquipoRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class EquipoServiceImpl implements EquipoService {
     @Override
     public Equipo obtenerPorId(Long id) {
         return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Equipo no encontrado con id " + id));
+                .orElseThrow(() -> new RecursoNoEncontradoException("No encontrado..."));
     }
 
     @Override

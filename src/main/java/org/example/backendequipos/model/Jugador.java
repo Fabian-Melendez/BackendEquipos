@@ -1,5 +1,6 @@
 package org.example.backendequipos.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -19,6 +20,7 @@ public class Jugador {
 
     @ManyToOne
     @JoinColumn(name = "id_equipo")
+    @JsonIgnoreProperties({"ciudad", "fundacion"})
     private Equipo equipo;
 
     public Jugador() {

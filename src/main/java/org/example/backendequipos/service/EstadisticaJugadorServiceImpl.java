@@ -1,5 +1,6 @@
 package org.example.backendequipos.service;
 
+import org.example.backendequipos.exception.RecursoNoEncontradoException;
 import org.example.backendequipos.model.EstadisticaJugador;
 import org.example.backendequipos.repository.EstadisticaJugadorRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +29,7 @@ public class EstadisticaJugadorServiceImpl implements EstadisticaJugadorService 
     @Override
     public EstadisticaJugador obtenerPorId(Long id) {
         return repo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Estadística no encontrada con id " + id));
+                .orElseThrow(() -> new RecursoNoEncontradoException("No encontrado..."));
     }
 
     @Override

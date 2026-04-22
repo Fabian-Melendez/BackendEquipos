@@ -3,8 +3,9 @@ package org.example.backendequipos.service;
 import org.example.backendequipos.model.Partido;
 import org.example.backendequipos.repository.PartidoRepository;
 import org.springframework.stereotype.Service;
-
+import org.example.backendequipos.dto.ResultadoPartidoDTO;
 import java.util.List;
+
 
 @Service
 public class PartidoServiceImpl implements PartidoService {
@@ -51,7 +52,7 @@ public class PartidoServiceImpl implements PartidoService {
     }
 
     @Override
-    public List<Object[]> resultados() {
+    public List<ResultadoPartidoDTO> resultados() {
         return repo.resultadosPartidos();
     }
 }
