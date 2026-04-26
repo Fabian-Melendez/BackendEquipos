@@ -16,11 +16,11 @@ public class Partido {
     private String estadio;
 
     @ManyToOne
-    @JoinColumn(name = "equipo_local_id")
+    @JoinColumn(name = "equipo_local", nullable = false)
     private Equipo equipoLocal;
 
     @ManyToOne
-    @JoinColumn(name = "equipo_visita_id")
+    @JoinColumn(name = "equipo_visita", nullable = false)
     private Equipo equipoVisita;
 
     private int golesLocal;

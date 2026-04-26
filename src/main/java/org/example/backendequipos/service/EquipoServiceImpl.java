@@ -29,7 +29,7 @@ public class EquipoServiceImpl implements EquipoService {
     @Override
     public Equipo obtenerPorId(Long id) {
         return repo.findById(id)
-                .orElseThrow(() -> new RecursoNoEncontradoException("No encontrado..."));
+                .orElseThrow(() -> new RecursoNoEncontradoException("Equipo no encontrado con id " + id));
     }
 
     @Override
@@ -45,6 +45,9 @@ public class EquipoServiceImpl implements EquipoService {
 
     @Override
     public void eliminar(Long id) {
+        if (!repo.existsById(id)) {
+            throw new RecursoNoEncontradoException("Equipo no encontrado con id " + id);
+        }
         repo.deleteById(id);
     }
 }
